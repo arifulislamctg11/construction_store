@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Grocery Store| Log in</title>
+    <title>Construction Store| Log in</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -24,7 +24,7 @@
     {{-- this is admin LTE login page  --}}
     <div class="login-box">
         <div class="login-logo">
-            <a href="home"><b>Grocery</b> Store</a>
+            <a href="home"><b>Construction</b> Store</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
