@@ -30,26 +30,44 @@
                 <!-- /.card-header -->
                 <!-- form start -->
                 <form action="/addproduct" method="POST">
-                    {{csrf_field()}}
-                    {{method_field('POST')}}
+                    {{ csrf_field() }}
+                    {{ method_field('POST') }}
                     <div class="card-body">
                         <div class="form-group">
                             <label for="productName">Product Name </label>
-                            <input type="text" name="name" class="form-control" id="productName" placeholder="Product Name">
+                            <input type="text" name="name" class="form-control" id="productName"
+                                placeholder="Product Name">
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <input type="text" name="description" class="form-control" id="description" placeholder="Description">
+                            <input type="text" name="description" class="form-control" id="description"
+                                placeholder="Description">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="InputCategory">Category</label>
                             <input type="text" name="category_id" class="form-control" id="category" placeholder="Category">
+                        </div> --}}
+
+                        <div class="form-group">
+                            <label for="category_id">Category </label>
+                            <select class="custom-select form-control-border" id="category_id" name="category_id">
+                                @foreach ($categories as $cate)
+                                    {{-- <p>This is user {{ $cate->id }}</p> --}}
+                                    <option value="{{ $cate->id }}">{{ $cate->category }}</option>
+                                @endforeach
+                            </select>
                         </div>
+
+
                         <div class="form-group">
                             <label for="price">Price</label>
                             <input type="text" name="price" class="form-control" id="price" placeholder="Price">
                         </div>
-                        
+                        {{-- <p>{{$categories}}</p> --}}
+
+
+
+
                     </div>
                     <!-- /.card-body -->
 
