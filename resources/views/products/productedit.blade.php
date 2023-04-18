@@ -36,14 +36,11 @@
                             <label for="description">Description</label>
                             <input type="text" name="description" class="form-control" id="description" value="{{$product->description}}">
                         </div>
-                        <div class="form-group">
-                            <label for="InputEmail1">Category</label>
-                            <input type="text" name="product_type" class="form-control" id="product_type" value="{{$product->category->category}}">
-                        </div>
+                        
 
                         <div class="form-group">
                             <label for="role">Category</label>
-                        <select name="role" class="form-control" id="role" value="{{$product->category->category}}">
+                        <select name="category_id" class="form-control" id="role" value="{{$product->category->category}}">
                             @foreach ($product as $item)
                                 
                             <option>{{$item}}</option>

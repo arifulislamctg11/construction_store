@@ -38,7 +38,7 @@ Route::group(['middlewhere' => 'guest'], function () {
     Route::get('addproduct', [ProductController::class, 'create'])->name('add-product');
     Route::post('addproduct', [ProductController::class, 'store'])->name('store');
     Route::get('productedit/{id}', [ProductController::class, 'edit'])->name('productedit');
-    Route::put('product-update/{id}', [ProductController::class, 'productupdate'])->name('product-update');
+    Route::put('product-update/{id}', [ProductController::class, 'update'])->name('product-update');
     Route::get('productdelete/{id}', [ProductController::class, 'destroy'])->name('pruductdelete');
     Route::get('productdetails/{id}', [ProductController::class, 'details'])->name('pruductdetails');
     
