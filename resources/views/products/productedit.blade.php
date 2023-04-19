@@ -24,34 +24,39 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="/product-update/{{$product->id}}" method="POST">
+                <form action="/product-update/{{$product[0]->id}}" method="POST">
                     {{csrf_field()}}
                     {{method_field('PUT')}}
                     <div class="card-body">
                         <div class="form-group">
                             <label for="productName">Product Name </label>
-                            <input type="text" name="product_name" class="form-control" id="productName" value="{{$product->product_name}}">
+                            <input type="text" name="product_name" class="form-control" id="productName" value="{{$product[0]->product_name}}">
                         </div>
                         <div class="form-group">
                             <label for="description">Description</label>
-                            <input type="text" name="description" class="form-control" id="description" value="{{$product->description}}">
+                            <input type="text" name="description" class="form-control" id="description" value="{{$product[0]->description}}">
                         </div>
                         
 
                         <div class="form-group">
                             <label for="role">Category</label>
-                        <select name="category_id" class="form-control" id="role" value="{{$product->category->category}}">
-                            @foreach ($product as $item)
+                        <select name="category_id" class="form-control" id="role" >
+                            @foreach ($product[1] as $item)
                                 
-                            <option>{{$item}}</option>
+                            <option @if ($product[0]->category->id == $item->id) selected
+                                
+                            @endif value="{{$item->id}}">{{$item->category}}</option>
+                            {{-- <option value="{{ $cate->id }}">{{ $cate->category }}</option> --}}
+
                             @endforeach
                             
                           </select>
                         </div>
 
+                        
                         <div class="form-group">
                             <label for="price">Price</label>
-                            <input type="text" name="price" class="form-control" id="price" value="{{$product->price}}">
+                            <input type="text" name="price" class="form-control" id="price" value="{{$product[0]->price}}">
                         </div>
                
 
